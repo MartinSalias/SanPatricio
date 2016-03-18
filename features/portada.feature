@@ -15,3 +15,9 @@ Scenario: Probar una letra valida
 	And la palabra secreta es "patricio"
 	When ingreso "a"
 	Then Tiene que decir "letra correcta"
+
+Scenario: Probar una letra valida Mayuscula
+	Given Voy a la portada
+	And la palabra secreta es "patricio"
+	When ingreso "A"
+	Then Tiene que decir "letra correcta"

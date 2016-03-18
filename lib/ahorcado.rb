@@ -1,20 +1,12 @@
 class Ahorcado
 	
-	def initialize 
-		@palabra 
-		@letra 	
-    end
 
     def palabrasecreta value
-		@palabra = value
-    end
-
-	def letra value
-		@letra = value
+		@palabra = value.upcase
     end
 	
-	def validarletra 
-		if (@palabra.include? @letra)
+	def validarletra letra
+		if (@palabra.include? letra.upcase)
 			return true
 		else
 			return false 
