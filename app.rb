@@ -4,16 +4,16 @@ require_relative './lib/ahorcado.rb'
 get '/' do
 	
 	erb :portada
-	end
+end
 
 post '/palabra' do
 
-	@@elahorcado = Ahorcado.new
-	@@elahorcado.palabrasecreta "patricio"
+	@@juego = Ahorcado.new
+	@@juego.palabrasecreta "patricio"
 	
-	if 	!@@elahorcado.validarletra params[:letra]
-		"No esta, la palabra tiene #{@@elahorcado.palabra.length} caracteres"
+	if @@juego.validarletra params[:letra]
+		"letra correcta, la palabra tiene #{@@juego.palabra.length} caracteres"
 	else
-		"letra correcta, la palabra tiene #{@@elahorcado.palabra.length} caracteres"
+		"No esta, la palabra tiene #{@@juego.palabra.length} caracteres"
 	end
 end
