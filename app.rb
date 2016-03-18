@@ -2,18 +2,22 @@ require 'sinatra'
 require_relative './lib/ahorcado.rb'
 
 get '/' do
-	
+	@@juego = Ahorcado.new
+	@@palabrasize = "la palabra tiene #{@@juego.palabrasecreta("patricio").length} letras"
 	erb :portada
 end
 
-post '/palabra' do
+post '/' do
 
 	@@juego = Ahorcado.new
 	@@juego.palabrasecreta "patricio"
 	
 	if @@juego.validarletra params[:letra]
-		"letra correcta, la palabra tiene #{@@juego.palabra.length} caracteres"
+		@resultado = "la #{params[:letra]} es una letra correcta"
 	else
-		"No esta, la palabra tiene #{@@juego.palabra.length} caracteres"
+		@resultado = "la #{params[:letra]} No esta"
 	end
+	
+	erb :portada
+
 end

@@ -1,8 +1,10 @@
-Ahorcado 5.0
+<h1>Ahorcado 5.0</h1> <%= @@palabrasize %>
 </br>
 </br>
-"la palabra tiene <%= @palabracant %>"
-<form action="/palabra" method="POST">
+<form action="/" method="POST">
 <input name="letra" type="text"/>
 <input name="boton" type="submit" value="Ingresar"/>
+
+<label><%= @resultado %></label>
+
 </form>
