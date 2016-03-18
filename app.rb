@@ -2,19 +2,18 @@ require 'sinatra'
 require_relative './lib/ahorcado.rb'
 
 get '/' do
+	
 	erb :portada
-end
+	end
 
 post '/palabra' do
 
 	@@elahorcado = Ahorcado.new
 	@@elahorcado.palabrasecreta "patricio"
-
-	#traer aca la clase ahorcado y que haga lo suyo.
 	
 	if 	!@@elahorcado.validarletra params[:letra]
-		"No esta"
+		"No esta, la palabra tiene #{@@elahorcado.palabra.length} caracteres"
 	else
-		"letra correcta"
+		"letra correcta, la palabra tiene #{@@elahorcado.palabra.length} caracteres"
 	end
 end

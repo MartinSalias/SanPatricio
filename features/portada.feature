@@ -21,3 +21,9 @@ Scenario: Probar una letra valida Mayuscula
 	And la palabra secreta es "patricio"
 	When ingreso "A"
 	Then Tiene que decir "letra correcta"
+
+Scenario: Ver la cantidad de letras de la palabra
+	Given Voy a la portada
+	And la palabra secreta es "patricio"
+	When ingreso "r"
+	Then Tiene que mostrar "letra correcta, la palabra tiene 8 caracteres"

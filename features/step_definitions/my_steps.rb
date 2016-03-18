@@ -15,4 +15,7 @@ When(/^ingreso "(.*?)"$/) do |letra|
   click_button("Ingresar")	
 end
 
+Then(/^Tiene que mostrar "(.*?)"$/) do |arg1|
+	  last_response.body.should =~ /#{arg1}/m
+end
 
