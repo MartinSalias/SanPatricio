@@ -22,13 +22,20 @@ Scenario: Probar una letra valida Mayuscula
 	When ingreso "A"
 	Then Tiene que decir "letra correcta"
 
-Scenario: Cantidad de letras de la palabra
-	Given Voy a la portada
-	And la palabra secreta es "patricio"
-	Then  Tiene que decir "la palabra tiene 8 letras"
 
 Scenario: Ver los resultados del ingreso de letras en la misma pagina
 	Given Voy a la portada
 	And la palabra secreta es "patricio"
 	When ingreso "a"
 	Then Tiene que mostrar "letra correcta" en la misma pagina
+
+Scenario: visualizar _ _ _ _  con la cantidad de letras de la palabra
+	Given Voy a la portada
+	And la palabra secreta es "patricio"
+	Then Se tiene que ver "_ _ _ _ _ _ _ _"
+
+Scenario: visualizar _ x _ _  con la letras valida que ingrese
+	Given Voy a la portada
+	When ingreso "a"
+	And la palabra secreta es "patricio"
+	Then Se tiene que ver "_ A _ _ _ _ _ _"  

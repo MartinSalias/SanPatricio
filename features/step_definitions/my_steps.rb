@@ -23,5 +23,9 @@ Then(/^Tiene que mostrar "(.*?)" en la misma pagina$/) do |arg1|
   last_response.body.should =~ /#{arg1}/m
 end
 
+Then(/^Se tiene que ver "(.*?)"$/) do |arg1|
+  last_response.body.should =~ /#{arg1}/m
+end
+
 
 
